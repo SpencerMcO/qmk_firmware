@@ -1,2 +1,3 @@
 TRI_LAYER_ENABLE = yes
 EEPROM_DRIVER = transient
+CAPS_WORD_ENABLE = yes

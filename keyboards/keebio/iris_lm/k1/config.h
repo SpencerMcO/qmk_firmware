@@ -24,3 +24,8 @@
 #   define WS2812_DMA_CHANNEL 2
 #   define WS2812_DMAMUX_ID STM32_DMAMUX1_TIM3_UP
 #endif
+
+/* USER CUSTOMIZATION BELOW HERE */
+
+/* Enabling caps word by double tapping left shift */
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
