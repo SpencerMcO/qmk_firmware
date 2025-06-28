@@ -1,0 +1,9 @@
+{
+    "readme": "copy and paste the macros section below into the keymap json file",
+    "macros": [
+        [{ "action": "tap", "keycodes": ["LSFT", "LCMD", "LBRC"] }],
+        [{ "action": "tap", "keycodes": ["LSFT", "LCMD", "RBRC"] }],
+        [{ "action": "tap", "keycodes": ["LCTL", "LCMD", "LEFT"] }],
+        [{ "action": "tap", "keycodes": ["LCTL", "LCMD", "RGHT"] }]
+    ]
+}
