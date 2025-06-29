@@ -41,8 +41,33 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // Disable backlight animations, just use solid color
 void keyboard_post_init_user(void) {
     rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
-    // Half brightness
+    // Quarter brightness
     rgb_matrix_sethsv_noeeprom(0, 0, 64);
+}
+
+// Layer indicator on all keys
+bool rgb_matrix_indicators_user(void) {
+    // Brightness shared by all layers
+    const uint8_t brightness = 64;
+    switch(get_highest_layer(layer_state|default_layer_state)) {
+        case 3:
+            // Green
+            rgb_matrix_sethsv_noeeprom(85, 255, brightness);
+            break;
+        case 2:
+            // Red
+            rgb_matrix_sethsv_noeeprom(0, 255, brightness);
+            break;
+        case 1:
+            // Cyan
+            rgb_matrix_sethsv_noeeprom(128, 255, brightness);
+            break;
+        default:
+            // White
+            rgb_matrix_sethsv_noeeprom(0, 0, brightness);
+            break;
+    }
+    return false;
 }
 
 #ifdef OTHER_KEYMAP_C
