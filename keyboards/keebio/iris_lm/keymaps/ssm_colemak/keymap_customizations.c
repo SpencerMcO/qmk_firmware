@@ -39,7 +39,9 @@ enum {
     // Enum for the "enter" key tap dance
     CT_ENT,
     // Enum for the "space" key tap dance
-    CT_SPC
+    CT_SPC,
+    // Enum for the "quote" key tap dance
+    CT_QUOT
 };
 
 typedef struct {
@@ -84,6 +86,7 @@ void tap_dance_tap_hold_reset(tap_dance_state_t *state, void *user_data) {
 tap_dance_action_t tap_dance_actions[] = {
     [CT_ENT] = ACTION_TAP_DANCE_TAP_HOLD(KC_ENT, KC_LOPT),
     [CT_SPC] = ACTION_TAP_DANCE_TAP_HOLD(KC_SPC, KC_RCMD),
+    [CT_QUOT] = ACTION_TAP_DANCE_TAP_HOLD(KC_QUOT, KC_RCTL),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -109,6 +112,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case TD(CT_ENT): // list all tap dance keycodes with tap-hold configurations
         case TD(CT_SPC):
+        case TD(CT_QUOT):
             if (!record->event.pressed) {
                 tap_dance_action_t *action = &tap_dance_actions[QK_TAP_DANCE_GET_INDEX(keycode)];
                 if (action->state.count && !action->state.finished) {
