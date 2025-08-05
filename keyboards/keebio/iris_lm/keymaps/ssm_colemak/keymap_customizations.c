@@ -84,7 +84,7 @@ void tap_dance_tap_hold_reset(tap_dance_state_t *state, void *user_data) {
     }
 
 tap_dance_action_t tap_dance_actions[] = {
-    [CT_ENT] = ACTION_TAP_DANCE_TAP_HOLD(KC_ENT, KC_LOPT),
+    [CT_ENT] = ACTION_TAP_DANCE_TAP_HOLD(KC_ENT, KC_LGUI),
     [CT_SPC] = ACTION_TAP_DANCE_TAP_HOLD(KC_SPC, KC_RCMD),
     [CT_QUOT] = ACTION_TAP_DANCE_TAP_HOLD(KC_QUOT, KC_RCTL),
 };
