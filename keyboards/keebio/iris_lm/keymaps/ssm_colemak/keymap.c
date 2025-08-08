@@ -11,7 +11,9 @@ enum {
     // Enum for the "space" key tap dance
     CT_SPC,
     // Enum for the "quote" key tap dance
-    CT_QUOT
+    CT_QUOT,
+    // Enum for the "zero" key tap dance
+    CT_ZERO
 };
 
 /* THIS FILE WAS GENERATED!
@@ -40,16 +42,16 @@ bool rgb_matrix_indicators_user(void) {
     const uint8_t brightness = 64;
     switch(get_highest_layer(layer_state|default_layer_state)) {
         case 3:
-            // Green
-            rgb_matrix_sethsv_noeeprom(85, 255, brightness);
+            // Cyan
+            rgb_matrix_sethsv_noeeprom(128, 255, brightness);
             break;
         case 2:
             // Red
             rgb_matrix_sethsv_noeeprom(0, 255, brightness);
             break;
         case 1:
-            // Cyan
-            rgb_matrix_sethsv_noeeprom(128, 255, brightness);
+            // Green
+            rgb_matrix_sethsv_noeeprom(85, 255, brightness);
             break;
         default:
             // White
